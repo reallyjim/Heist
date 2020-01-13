@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -8,6 +7,7 @@ using System.Text;
 
 namespace Heist
 {
+    // borrowed from https://dejanstojanovic.net/aspnet/2014/november/adding-extra-info-to-an-image-file/  to try to add additional properties
     public enum MetaProperty
     {
         Title = 40091,

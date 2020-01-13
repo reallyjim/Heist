@@ -51,8 +51,6 @@
     <Compile Include="BitmapExtensions.cs" />
     <Compile Include="ImageApi.cs" />
     <Compile Include="ImageResponse.cs" />
-    <Compile Include="FileFinder.cs" />
-    <Compile Include="FileRetriever.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
