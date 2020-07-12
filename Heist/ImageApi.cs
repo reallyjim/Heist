@@ -45,15 +45,12 @@ namespace Heist
 
             var request = (HttpWebRequest)WebRequest.Create(url);
             var response = request.GetResponse();
-            if (response != null)
+
+            using (var remoteStream = response.GetResponseStream())
             {
-                using (var remoteStream = response.GetResponseStream())
-                {
-                    var bitmap = Image.FromStream(remoteStream);
-                    return bitmap;
-                }
+                var bitmap = Image.FromStream(remoteStream);
+                return bitmap;
             }
-            return null;
         }
     }
 }

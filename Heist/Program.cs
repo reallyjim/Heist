@@ -3,11 +3,12 @@ using System.IO;
 
 namespace Heist
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
-            var downloadFolder = GetDownloadFolder();   
+            var folderFinder = new FolderLocator();
+            var downloadFolder = folderFinder.GetDownloadFolder();   
 
             var api = new ImageApi();
             var response = api.GetTodaysImageInfo();
@@ -19,19 +20,6 @@ namespace Heist
             var targetPath = Path.Combine(downloadFolder, filename);
 
             api.DownloadImage(imageData.Url, targetPath);
-
-        }
-
-        private static string GetDownloadFolder()
-        {
-            var targetFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Heist");
-
-            if (!Directory.Exists(targetFolder))
-            {
-                Directory.CreateDirectory(targetFolder);
-            }
-
-            return targetFolder;
         }
     }
 }

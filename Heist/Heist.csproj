@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitmapExtensions.cs" />
+    <Compile Include="FolderLocator.cs" />
     <Compile Include="ImageApi.cs" />
     <Compile Include="ImageResponse.cs" />
     <Compile Include="Program.cs" />
