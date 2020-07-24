@@ -13,13 +13,16 @@ namespace Heist
             var api = new ImageApi();
             var response = api.GetTodaysImageInfo();
 
-            var imageData = response.Images[0];
+            if (response.HasImage)
+            {
+                var imageData = response.Images[0];
 
-            var split = imageData.Urlbase.Split(new[] { '=' });
-            var filename = $"{split[1]}.jpg";
-            var targetPath = Path.Combine(downloadFolder, filename);
+                var split = imageData.Urlbase.Split(new[] { '=' });
+                var filename = $"{split[1]}.jpg";
+                var targetPath = Path.Combine(downloadFolder, filename);
 
-            api.DownloadImage(imageData.Url, targetPath);
+                api.DownloadImage(imageData.Url, targetPath);    
+            }
         }
     }
 }

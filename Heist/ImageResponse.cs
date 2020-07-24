@@ -1,8 +1,12 @@
-﻿namespace Heist
+﻿using System.Drawing;
+
+namespace Heist
 {
     internal class ImageResponse
     {
         public ImageData[] Images { get; set; }
+
+        public bool HasImage => Images.Length > 0;
     }
 
     internal class ImageData
